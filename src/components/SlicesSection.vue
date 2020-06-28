@@ -7,7 +7,10 @@
 </template>
 
 <script>
-import Hero from './Hero.vue'
+import Hero from './Slices/Hero.vue'
+import SplitContent from './Slices/SplitContent.vue'
+import FullWidthBanner from './Slices/FullWidthBanner'
+
 
 export default {
     props: ['slices','prefix'],
@@ -19,6 +22,10 @@ export default {
             switch (slice.type){
                 case 'hero':
                     return Hero
+                case 'split_content':
+                    return SplitContent
+                case 'full_width_banner':
+                    return FullWidthBanner
                 default: 
                     break;
             }
@@ -26,3 +33,15 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+    .prismic-slice{
+        margin: 3em auto;
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 1px;
+        }
+    }
+</style>

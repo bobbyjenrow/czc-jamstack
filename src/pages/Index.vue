@@ -1,22 +1,8 @@
 <template>
   <Layout>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-    <!-- <section class="slices-wrapper">
-      <component :is="mapSliceIdToComponent(slice,)"></component>
-    </section> -->
     <slices-section :slices="slices" prefix="prismic_PageBody"></slices-section>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
 
   </Layout>
 </template>
@@ -47,7 +33,9 @@ query{
               primary{
                 heading
                 subheading
+                content
                 image
+                image_side
                 cta_text
                 cta_link{
                   _linkType
@@ -60,6 +48,7 @@ query{
               primary{
                 heading
                 subheading
+                content
                 image
                 cta_text
                 cta_link{
@@ -85,7 +74,7 @@ export default {
     title: 'Hello, world!'
   },
   components: {
-    SlicesSection
+    SlicesSection,
   },
   computed: {
     slices: function(){ return this.$page.prismic.allPages.edges[0].node.body }

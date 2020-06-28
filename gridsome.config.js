@@ -20,5 +20,12 @@ module.exports = {
         useMasterRef: true
       },
     },
+    {
+      use: 'gridsome-plugin-sass-resources-loader',
+      options: {
+        // provide path to the file with resources
+        resources: './src/assets/scss/main.scss'
+      }
+    }
   ],
 }
