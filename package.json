@@ -13,7 +13,7 @@
     "gridsome-plugin-sass-resources-loader": "^0.0.3",
     "gridsome-source-graphql": "^1.0.2",
     "gridsome-source-graphql-prismic": "^0.1.6",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^3.0.0",
     "sass-loader": "^8.0.2",
